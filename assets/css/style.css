@@ -165,7 +165,7 @@ body {
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 16px; }
+.container { padding-inline: 15px; }
 
 .section { padding-block: var(--section-padding); }
 
@@ -239,7 +239,7 @@ body {
 
 .w-100 { 
   width: 120%; 
-  margin-right: 170%;
+  margin-right: 90%;
 
 }
 
@@ -267,7 +267,6 @@ body {
 .section-subtitle::before {
   top: 50%;
   left: 0;
-  width: 10px;
   height: 10px;
   transform: translateY(-50%);
   background-color: var(--yellow-green);
@@ -381,9 +380,9 @@ body {
 
 }
 
-
-.logo {
-  margin-left: 7%;
+.logo img {
+  width: 50px;
+  margin-left: 20px;
 }
 
 
@@ -477,7 +476,7 @@ body {
 .about .container {
   display: grid;
   gap: 40px;
-  margin-top: 30px;
+  margin-top: 90px;
 }
 
 .about-banner .img-1 { border-top-left-radius: var(--radius-50); }
@@ -493,8 +492,8 @@ body {
 }
 
 .wo-100 { 
-  width: 105%; 
-  margin-right: 170%;
+  width: 100%; 
+
 
 }
 
@@ -572,24 +571,36 @@ body {
 
 .stats-banner {
   position: relative;
-  height: 380px;
+  width: 100%;
+  max-width: 1300px; /* Ajusta el ancho máximo según tus preferencias */
+  margin: 0 auto;
+  height: auto;
   border-radius: var(--radius-60) 0;
   overflow: hidden;
 }
+
 
 .play-btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--white);
-  background-color: var(--yellow-green);
-  font-size: 30px;
-  padding: 20px;
-  border-radius: var(--radius-circle);
-  animation: pulse 2s ease infinite;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#player {
+  width: 100%; /* Ancho al 100% */
+  height: auto; /* Altura automática */
+}
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--yellow-green); }
   100% { box-shadow: 0 0 0 20px transparent; }
@@ -679,24 +690,48 @@ body {
 
 .slider {
     width: 75vw;
-    height: auto;
     margin: auto;
     overflow: hidden;
+    
+    
 }
 
 .slider .slide-track {
     display: flex;
-    animation: scroll 40s linear infinite;
-    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
+    -webkit-animation: scroll 30s linear infinite;
     width: calc(300px * 14);
+    
 }
 
 .slider .slide {
-    width:300px;
+  width: 300px;
+  border-radius: 50%; /* Agrega bordes redondeados para hacer que las imágenes sean circulares */
+  overflow: hidden; /* Asegura que la imagen se ajuste correctamente al círculo */
+  position: relative; /* Permite posicionar el contenedor adicional */
+
 }
+
+.slider .slide .image-container {
+  width: 100%;
+  padding-top: 100%; /* Crea un contenedor cuadrado */
+  background-color: white; /* Establece el fondo blanco */
+  position: absolute; /* Posiciona el contenedor */
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    
+    
+
 
 .slider .slide img {
     width: 130%;
+    border-radius: 50%; /* Aplica el mismo borde redondeado a la imagen */
+
+  
 }
 
 @keyframes scroll {
@@ -705,8 +740,8 @@ body {
         transform: translateX(0);
     }
     100% {
-        -webkit-transform: translateX(calc(-200px * 7));
-        transform: translateX(calc(-200px * 7));
+        -webkit-transform: translateX(calc(-200px * 14));
+        transform: translateX(calc(-200px * 14));
     }
 }
 
@@ -1052,10 +1087,10 @@ body {
   .btn-secondary { padding-inline: 70px; }
 
 
-
   /**
    * HERO
    */
+  
 
   .hero .container {
     grid-template-columns: 0.8fr 1fr;
@@ -1089,7 +1124,19 @@ body {
 }
 
 
+ /**
+   * LOGOS
+   */
 
+.slider .slide {
+    width: 100%; 
+}
+.slider .slide img {
+    width: 100%; 
+}
+.slider .slide-track {
+    animation: scroll 20s linear infinite;  
+}
 
 
 /**
@@ -1117,8 +1164,13 @@ body {
     --section-padding: 60px;
 
   }
+  
 
 
+  .logo img {
+    width: 80px;
+    margin-left: 90px;
+  }
 
   /**
    * REUSED STYLE
@@ -1131,14 +1183,13 @@ body {
   }
 
 
-
   /**
    * HERO
    */
   
   .hero { padding-block-start: calc(var(--section-padding) + 110px); }
 
-  .hero-title { margin-block-end: 15px; }
+  .hero-title { margin-block-end: 15px;}
 
   .hero-list {
     display: flex;
@@ -1190,7 +1241,7 @@ body {
   .stats-list { grid-template-columns: repeat(3, 1fr); }
 
 
-
+  
   /**
    * SERVICE
    */
@@ -1297,14 +1348,11 @@ body {
   }
 
 
-
   /**
    * REUSED STYLE
    */
 
   .container { max-width: 1050px; }
-
-
 
   /**
    * HERO
@@ -1342,7 +1390,7 @@ body {
    * STATS
    */
 
-  .stats-banner { height: 500px; }
+  .stats-banner { height: 420px; }
 
 
 
@@ -1431,6 +1479,7 @@ body {
     max-width: unset;
     padding-inline: 35px;
   }
+
 
   .nav-toggle-btn { display: none; }
 
